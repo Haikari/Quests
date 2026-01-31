@@ -21,16 +21,34 @@ A gamified task management application built with Python and Tkinter. Organize y
 2. Extract the archive
 3. Run the executable:
    ```bash
-   ./Quests
+   ./quests-linux
    ```
+
+Alternatively, install as a system application:
+```bash
+chmod +x quests-linux
+sudo cp -r dist/Quests /opt/
+cp quests.desktop ~/.local/share/applications/
+update-desktop-database ~/.local/share/applications/
+```
 
 The app will be available in your applications menu under "Quests".
 
 ### Windows
 
-1. Download `Quests.exe` from [GitHub Releases](https://github.com/Haikari/Quests/releases)
-2. Run the executable
-3. (Optional) Create a shortcut on your desktop for easy access
+To run on Windows, you have two options:
+
+**Option 1: Build from source (recommended)**
+1. Install Python 3.10+
+2. Clone the repository
+3. Run `python -m pip install -r requirements.txt`
+4. Run `pyinstaller build_windows.spec --distpath dist`
+5. Execute `dist/Quests/Quests.exe`
+
+**Option 2: Use WSL2**
+- Install WSL2 with Python and follow Linux instructions above
+
+**Note:** Pre-built Windows executables are not currently distributed. The build process requires running PyInstaller on Windows or WSL2.
 
 ## Building from Source
 

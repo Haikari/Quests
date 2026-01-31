@@ -1,0 +1,8 @@
+#!/bin/bash
+# Quests - Linux executable
+
+# This is a wrapper script to run the Quests application
+# It ensures the app runs from the correct directory
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+"$SCRIPT_DIR/Quests/Quests" "$@"
